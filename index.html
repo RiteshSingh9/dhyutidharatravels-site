@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dhyutidhara Travels - Premium Travel Experiences</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css"
-  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -38,12 +35,22 @@
   </script>
 
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: "Inter", sans-serif;
+      scroll-behavior: smooth;
     }
+
     .luxury-heading {
       font-family: "Playfair Display", serif;
     }
+
     .glass {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(12px);
@@ -59,12 +66,15 @@
       transition: background 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
       color: #ffffff;
     }
+
     .nav-glass a {
       color: rgba(255, 255, 255, 0.95);
     }
+
     .nav-glass a:hover {
       color: #fffacd;
     }
+
     .nav-glass .text-dhyuti-blue {
       color: #2c8bc9 !important;
     }
@@ -72,163 +82,91 @@
     .animate-float {
       animation: float 6s ease-in-out infinite;
     }
+
     @keyframes float {
+
       0%,
       100% {
         transform: translateY(0);
       }
+
       50% {
         transform: translateY(-18px);
       }
     }
   </style>
 </head>
+
 <body class="bg-premium-gray text-gray-800">
   <!-- Navigation -->
   <nav class="fixed w-full z-50 nav-glass text-white">
-    <div
-      class="max-w-7xl mx-auto flex justify-between items-center py-3 px-4"
-    >
+    <div class="max-w-7xl mx-auto flex justify-between items-center py-3 px-4">
       <div class="flex items-center space-x-3" id="logo">
-        <div
-          class="w-12 h-12 bg-dhyuti-blue rounded-full flex items-center justify-center"
-        >
+        <div class="w-12 h-12 bg-dhyuti-blue rounded-full flex items-center justify-center">
           <img src="./logo.png" alt="Dhyutidhara Logo" class="w-8 h-8" />
         </div>
         <div>
-          <span
-            class="text-xl font-luxury text-dhyuti-blue font-bold"
-            >Dhyutidhara</span
-          >
+          <span class="text-xl font-luxury text-dhyuti-blue font-bold">Dhyutidhara</span>
           <span class="block text-xs text-white/80 font-medium">TRAVELS</span>
         </div>
       </div>
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center space-x-6">
-        <a href="#home" class="hover:text-white/90 transition font-semibold"
-          >Home</a
-        >
-        <a href="#packages" class="hover:text-white/90 transition font-semibold"
-          >Packages</a
-        >
-        <a href="#about" class="hover:text-white/90 transition font-semibold"
-          >About</a
-        >
-        <a
-          href="#why-choose"
-          class="hover:text-white/90 transition font-semibold"
-          >Why Us</a
-        >
-        <a
-          href="#contact"
-          class="bg-dhyuti-blue px-5 py-2 rounded-full text-white font-semibold hover:bg-dark-blue transition"
-          >Contact</a
-        >
+        <a href="#home" class="hover:text-white/90 transition font-semibold">Home</a>
+        <a href="#packages" class="hover:text-white/90 transition font-semibold">Packages</a>
+        <a href="#about" class="hover:text-white/90 transition font-semibold">About</a>
+        <a href="#why-choose" class="hover:text-white/90 transition font-semibold">Why Us</a>
+        <a href="#contact"
+          class="bg-dhyuti-blue px-5 py-2 rounded-full text-white font-semibold hover:bg-dark-blue transition">Contact</a>
       </div>
 
       <!-- Mobile menu button -->
-      <button
-        id="mobile-menu-button"
+      <button id="mobile-menu-button"
         class="md:hidden flex items-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white"
-        aria-label="Toggle menu"
-      >
-        <svg
-          class="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
+        aria-label="Toggle menu">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
     </div>
 
     <!-- Mobile Menu -->
-    <div
-      id="mobile-menu"
-      class="hidden md:hidden bg-nav-bg backdrop-blur-md border-t border-gray-700"
-    >
-      <a
-        href="#home"
-        class="block px-4 py-3 text-white hover:bg-dhyuti-blue transition"
-        >Home</a
-      >
-      <a
-        href="#packages"
-        class="block px-4 py-3 text-white hover:bg-dhyuti-blue transition"
-        >Packages</a
-      >
-      <a
-        href="#about"
-        class="block px-4 py-3 text-white hover:bg-dhyuti-blue transition"
-        >About</a
-      >
-      <a
-        href="#why-choose"
-        class="block px-4 py-3 text-white hover:bg-dhyuti-blue transition"
-        >Why Us</a
-      >
-      <a
-        href="#contact"
-        class="block px-4 py-3 text-white hover:bg-dark-blue transition bg-dhyuti-blue"
-        >Contact</a
-      >
+    <div id="mobile-menu" class="hidden md:hidden bg-nav-bg backdrop-blur-md border-t border-gray-700">
+      <a href="#home" class="block px-4 py-3 text-white hover:bg-dhyuti-blue transition">Home</a>
+      <a href="#packages" class="block px-4 py-3 text-white hover:bg-dhyuti-blue transition">Packages</a>
+      <a href="#about" class="block px-4 py-3 text-white hover:bg-dhyuti-blue transition">About</a>
+      <a href="#why-choose" class="block px-4 py-3 text-white hover:bg-dhyuti-blue transition">Why Us</a>
+      <a href="#contact" class="block px-4 py-3 text-white hover:bg-dark-blue transition bg-dhyuti-blue">Contact</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section
-    id="home"
-    class="hero-bg min-h-screen flex items-center relative pt-28 pb-12 bg-gradient-to-br from-dhyuti-blue to-dark-blue px-6 sm:px-8 md:px-12 lg:px-16"
-  >
-    <div
-      class="max-w-7xl w-full mx-auto py-16 grid grid-cols-1 lg:grid-cols-2 gap-16 z-20 relative items-center"
-    >
+  <section id="home"
+    class="hero-bg min-h-screen flex items-center relative pt-28 pb-12 bg-gradient-to-br from-dhyuti-blue to-dark-blue px-6 sm:px-8 md:px-12 lg:px-16">
+    <div class="max-w-7xl w-full mx-auto py-16 grid grid-cols-1 lg:grid-cols-2 gap-16 z-20 relative items-center">
       <div data-aos="fade-right" class="text-center lg:text-left">
-        <h1
-          class="luxury-heading text-white text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight"
-        >
+        <h1 class="luxury-heading text-white text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
           Discover
           <span class="text-lux-gold block">Extraordinary</span> Journeys
         </h1>
-        <p
-          class="text-lg text-white/90 mb-8 font-light leading-relaxed max-w-lg mx-auto lg:mx-0"
-        >
+        <p class="text-lg text-white/90 mb-8 font-light leading-relaxed max-w-lg mx-auto lg:mx-0">
           Experience the world's most luxurious destinations with
           Dhyutidhara—where every journey becomes unforgettable.
         </p>
         <div class="flex flex-col sm:flex-row sm:justify-start gap-4 max-w-lg mx-auto lg:mx-0">
-          <a
-            href="#packages"
-            class="bg-lux-gold text-dhyuti-blue px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-400 transition shadow-xl text-center"
-            >Start Your Journey</a
-          >
-          <a
-            href="#about"
-            class="glass text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white/20 transition text-center"
-            >Watch Our Story</a
-          >
+          <a href="#packages"
+            class="bg-lux-gold text-dhyuti-blue px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-400 transition shadow-xl text-center">Start
+            Your Journey</a>
+          <a href="#about"
+            class="glass text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white/20 transition text-center">Watch
+            Our Story</a>
         </div>
       </div>
-      <div
-        data-aos="fade-left"
-        class="relative flex flex-col items-center w-full max-w-md mx-auto"
-      >
-        <img
-          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=80"
-          alt="Premium Traveller"
-          class="rounded-3xl shadow-2xl w-full h-72 object-cover mb-4 animate-float"
-        />
-        <div
-          class="bg-white rounded-2xl px-6 py-4 shadow-lg glass mt-4 w-full text-center"
-        >
+      <div data-aos="fade-left" class="relative flex flex-col items-center w-full max-w-md mx-auto">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=80"
+          alt="Premium Traveller" class="rounded-3xl shadow-2xl w-full h-72 object-cover mb-4 animate-float" />
+        <div class="bg-white rounded-2xl px-6 py-4 shadow-lg glass mt-4 w-full text-center">
           <div class="flex justify-between text-dhyuti-blue font-semibold text-lg">
             <span>150+ Destinations</span>
             <span>5000+ Happy Travelers</span>
@@ -236,23 +174,14 @@
         </div>
       </div>
     </div>
-    <i
-      class="fas fa-plane animate-float absolute right-10 top-28 text-white/20 text-5xl md:text-7xl"
-    ></i>
-    <i
-      class="fas fa-map-marker-alt animate-float absolute left-6 bottom-20 text-white/20 text-4xl md:text-5xl"
-    ></i>
-    <i
-      class="fas fa-compass animate-float absolute left-1/2 top-24 text-white/20 text-3xl md:text-4xl"
-      style="transform: translateX(-50%)"
-    ></i>
+    <i class="fas fa-plane animate-float absolute right-10 top-28 text-white/20 text-5xl md:text-7xl"></i>
+    <i class="fas fa-map-marker-alt animate-float absolute left-6 bottom-20 text-white/20 text-4xl md:text-5xl"></i>
+    <i class="fas fa-compass animate-float absolute left-1/2 top-24 text-white/20 text-3xl md:text-4xl"
+      style="transform: translateX(-50%)"></i>
   </section>
 
   <!-- Packages Section -->
-  <section
-    id="packages"
-    class="py-20 bg-premium-gray px-6 sm:px-8 md:px-12 lg:px-16"
-  >
+  <section id="packages" class="py-20 bg-premium-gray px-6 sm:px-8 md:px-12 lg:px-16">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-14" data-aos="fade-up">
         <h2 class="luxury-heading text-3xl sm:text-4xl font-bold text-dhyuti-blue mb-4">
@@ -262,131 +191,105 @@
           Curated luxury travel experiences to create timeless memories.
         </p>
       </div>
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-full mx-auto max-w-7xl"
-      >
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-full mx-auto max-w-7xl">
         <!-- Package Card 1 -->
-        <div
-          class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition p-6"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=400&q=80"
-            alt="Himalayas"
-            class="rounded-xl w-full h-48 object-cover mb-4"
-          />
-          <h3
-            class="luxury-heading text-xl text-dhyuti-blue font-bold mb-2"
-          >
-            Himalayan Luxury
+        <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition p-6" data-aos="fade-up"
+          data-aos-delay="100">
+          <img src="./ayodhya.png"
+            alt="Uttar Pradesh" class="rounded-xl w-full h-48 object-cover mb-4" />
+            <!-- https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=400&q=80 -->
+          <h3 class="luxury-heading text-xl text-dhyuti-blue font-bold mb-2">
+            UP Darshan
           </h3>
           <p class="text-gray-600 mb-4">
-            Majestic mountains with premium resorts & helicopter tours.
+            Spiritual sojourns and cultural heritage in the heart of India.
           </p>
           <div class="font-semibold text-dhyuti-blue mb-2">
-            ₹85,000
-            <span class="text-sm text-gray-400">7 Days / 6 Nights</span>
+            ₹12,999
+            <span class="text-sm text-gray-400">3 Days, 2 Nights</span>
           </div>
           <ul class="mb-4 space-y-1 text-gray-700">
             <li>
-              <i class="fas fa-check text-dhyuti-blue mr-2"></i>5-Star Mountain
-              Resorts
+              <i class="fas fa-check text-dhyuti-blue mr-2"></i>AC Transportation
             </li>
             <li>
-              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Helicopter Tours
+              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Accommodation
             </li>
             <li>
-              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Gourmet Dining
+              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Sightseeing
+            </li>
+            <li>
+              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Breakfast & Dinner
             </li>
           </ul>
-          <button
-            class="bg-dhyuti-blue text-white w-full py-3 rounded-xl font-semibold hover:bg-dark-blue transition"
-          >
+          <button class="bg-dhyuti-blue text-white w-full py-3 rounded-xl font-semibold hover:bg-dark-blue transition">
             Book Now
           </button>
         </div>
         <!-- Package Card 2 -->
-        <div
-          class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition p-6"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80"
-            alt="Rajasthan"
-            class="rounded-xl w-full h-48 object-cover mb-4"
-          />
-          <h3
-            class="luxury-heading text-xl text-dhyuti-blue font-bold mb-2"
-          >
-            Rajasthan Royalty
+        <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition p-6" data-aos="fade-up"
+          data-aos-delay="200">
+          <img src="./nainital.jpg"
+            alt="Uttrakhand" class="rounded-xl w-full h-48 object-cover mb-4" />
+            <!-- https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80 -->
+          <h3 class="luxury-heading text-xl text-dhyuti-blue font-bold mb-2">
+            Mukteshwar & Nainital
           </h3>
           <p class="text-gray-600 mb-4">
-            Magnificent palaces, heritage and luxury desert safaris.
+            Scenic hill stations with luxury stays and breathtaking views.
           </p>
           <div class="font-semibold text-dhyuti-blue mb-2">
-            ₹95,000
-            <span class="text-sm text-gray-400">8 Days / 7 Nights</span>
+            ₹11,999
+            <span class="text-sm text-gray-400">3 Days / 2 Nights</span>
           </div>
           <ul class="mb-4 space-y-1 text-gray-700">
             <li>
-              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Heritage Palace
-              Hotels
+              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Travel with beauty of Mountains
             </li>
             <li>
-              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Royal Cultural
-              Shows
+              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Accommodation
             </li>
             <li>
-              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Luxury Desert
-              Safari
+              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Sightseeing
+            </li>
+            <li>
+              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Breakfast & Dinner
             </li>
           </ul>
-          <button
-            class="bg-dhyuti-blue text-white w-full py-3 rounded-xl font-semibold hover:bg-dark-blue transition"
-          >
+          <button class="bg-dhyuti-blue text-white w-full py-3 rounded-xl font-semibold hover:bg-dark-blue transition">
             Book Now
           </button>
         </div>
         <!-- Package Card 3 -->
-        <div
-          class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition p-6"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
-            alt="Kerala"
-            class="rounded-xl w-full h-48 object-cover mb-4"
-          />
-          <h3
-            class="luxury-heading text-xl text-dhyuti-blue font-bold mb-2"
-          >
-            Kerala Backwaters
+        <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition p-6" data-aos="fade-up"
+          data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+            alt="Mendipur Balaji, Khatu Shyam, vrindavan" class="rounded-xl w-full h-48 object-cover mb-4" />
+          <h3 class="luxury-heading text-xl text-dhyuti-blue font-bold mb-2">
+            Spiritual Trip
           </h3>
           <p class="text-gray-600 mb-4">
-            Serene houseboats and wellness retreats in God's Own Country.
+            Explore India's sacred sites with comfort and reverence.
           </p>
           <div class="font-semibold text-dhyuti-blue mb-2">
-            ₹75,000
-            <span class="text-sm text-gray-400">6 Days / 5 Nights</span>
+            ₹15,999
+            <span class="text-sm text-gray-400">3 Days / 2 Nights</span>
           </div>
           <ul class="mb-4 space-y-1 text-gray-700">
             <li>
-              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Luxury Houseboat
+              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Travel with Spirituality in core.
             </li>
             <li>
-              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Ayurvedic Spa
+              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Accommodation
             </li>
             <li>
-              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Organic Farm
-              Experiences
+              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Sightseeing & Mandir Darshan
+            </li>
+            <li>
+              <i class="fas fa-check text-dhyuti-blue mr-2"></i>Breakfast & Dinner
             </li>
           </ul>
-          <button
-            class="bg-dhyuti-blue text-white w-full py-3 rounded-xl font-semibold hover:bg-dark-blue transition"
-          >
+          <button class="bg-dhyuti-blue text-white w-full py-3 rounded-xl font-semibold hover:bg-dark-blue transition">
             Book Now
           </button>
         </div>
@@ -395,17 +298,10 @@
   </section>
 
   <!-- About Us Section -->
-  <section
-    id="about"
-    class="py-20 bg-white px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28"
-  >
-    <div
-      class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
-    >
+  <section id="about" class="py-20 bg-white px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       <div data-aos="fade-right" class="text-center lg:text-left">
-        <h2
-          class="luxury-heading text-3xl sm:text-4xl font-bold text-dhyuti-blue mb-7"
-        >
+        <h2 class="luxury-heading text-3xl sm:text-4xl font-bold text-dhyuti-blue mb-7">
           About Dhyutidhara Travels
         </h2>
         <p class="text-lg text-gray-700 mb-4 leading-relaxed max-w-lg mx-auto lg:mx-0">
@@ -423,50 +319,28 @@
             <div class="text-gray-600 font-medium">Customer Sat.</div>
           </div>
         </div>
-        <button
-          class="bg-dhyuti-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-dark-blue"
-        >
+        <button class="bg-dhyuti-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-dark-blue">
           Our Story
         </button>
       </div>
       <div data-aos="fade-left" class="grid grid-cols-2 gap-6 max-w-md mx-auto">
-        <div
-          class="text-center bg-premium-gray p-5 rounded-xl flex flex-col items-center"
-        >
-          <i
-            class="fas fa-award text-dhyuti-blue text-3xl mb-2"
-            aria-hidden="true"
-          ></i>
+        <div class="text-center bg-premium-gray p-5 rounded-xl flex flex-col items-center">
+          <i class="fas fa-award text-dhyuti-blue text-3xl mb-2" aria-hidden="true"></i>
           <div class="font-bold text-dhyuti-blue mb-1">Award Winning</div>
           <div class="text-sm text-gray-700">Luxury travel excellence</div>
         </div>
-        <div
-          class="text-center bg-premium-gray p-5 rounded-xl flex flex-col items-center"
-        >
-          <i
-            class="fas fa-users text-dhyuti-blue text-3xl mb-2"
-            aria-hidden="true"
-          ></i>
+        <div class="text-center bg-premium-gray p-5 rounded-xl flex flex-col items-center">
+          <i class="fas fa-users text-dhyuti-blue text-3xl mb-2" aria-hidden="true"></i>
           <div class="font-bold text-dhyuti-blue mb-1">Expert Team</div>
           <div class="text-sm text-gray-700">Professional consultants</div>
         </div>
-        <div
-          class="text-center bg-premium-gray p-5 rounded-xl flex flex-col items-center"
-        >
-          <i
-            class="fas fa-shield-alt text-dhyuti-blue text-3xl mb-2"
-            aria-hidden="true"
-          ></i>
+        <div class="text-center bg-premium-gray p-5 rounded-xl flex flex-col items-center">
+          <i class="fas fa-shield-alt text-dhyuti-blue text-3xl mb-2" aria-hidden="true"></i>
           <div class="font-bold text-dhyuti-blue mb-1">Secure Travel</div>
           <div class="text-sm text-gray-700">Full insurance</div>
         </div>
-        <div
-          class="text-center bg-premium-gray p-5 rounded-xl flex flex-col items-center"
-        >
-          <i
-            class="fas fa-headset text-dhyuti-blue text-3xl mb-2"
-            aria-hidden="true"
-          ></i>
+        <div class="text-center bg-premium-gray p-5 rounded-xl flex flex-col items-center">
+          <i class="fas fa-headset text-dhyuti-blue text-3xl mb-2" aria-hidden="true"></i>
           <div class="font-bold text-dhyuti-blue mb-1">24/7 Support</div>
           <div class="text-sm text-gray-700">Round-the-clock</div>
         </div>
@@ -475,10 +349,8 @@
   </section>
 
   <!-- Why Travel With Us Section -->
-  <section
-    id="why-choose"
-    class="py-20 bg-gradient-to-br from-dhyuti-blue to-dark-blue text-white px-6 sm:px-10 md:px-14 lg:px-20 xl:px-28"
-  >
+  <section id="why-choose"
+    class="py-20 bg-gradient-to-br from-dhyuti-blue to-dark-blue text-white px-6 sm:px-10 md:px-14 lg:px-20 xl:px-28">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-14" data-aos="fade-up">
         <h2 class="luxury-heading text-3xl sm:text-4xl font-bold mb-6">
@@ -489,29 +361,15 @@
         </p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        <div
-          class="glass p-8 rounded-xl text-center"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <i
-            class="fas fa-gem text-lux-gold text-3xl mb-3 animate-float"
-            aria-hidden="true"
-          ></i>
+        <div class="glass p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="100">
+          <i class="fas fa-gem text-lux-gold text-3xl mb-3 animate-float" aria-hidden="true"></i>
           <h3 class="luxury-heading text-xl font-bold mb-2">Luxury Redefined</h3>
           <p class="text-white/80">
             Handpicked stays, exclusive access, premium amenities.
           </p>
         </div>
-        <div
-          class="glass p-8 rounded-xl text-center"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <i
-            class="fas fa-magic text-lux-gold text-3xl mb-3 animate-float"
-            aria-hidden="true"
-          ></i>
+        <div class="glass p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="200">
+          <i class="fas fa-magic text-lux-gold text-3xl mb-3 animate-float" aria-hidden="true"></i>
           <h3 class="luxury-heading text-xl font-bold mb-2">
             Personalized Journeys
           </h3>
@@ -519,55 +377,27 @@
             Every itinerary is crafted for your unique dreams.
           </p>
         </div>
-        <div
-          class="glass p-8 rounded-xl text-center"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-          <i
-            class="fas fa-globe text-lux-gold text-3xl mb-3 animate-float"
-            aria-hidden="true"
-          ></i>
+        <div class="glass p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="300">
+          <i class="fas fa-globe text-lux-gold text-3xl mb-3 animate-float" aria-hidden="true"></i>
           <h3 class="luxury-heading text-xl font-bold mb-2">Global Expertise</h3>
           <p class="text-white/80">
             Authentic experiences, insider access worldwide.
           </p>
         </div>
-        <div
-          class="glass p-8 rounded-xl text-center"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          <i
-            class="fas fa-clock text-lux-gold text-3xl mb-3 animate-float"
-            aria-hidden="true"
-          ></i>
+        <div class="glass p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="400">
+          <i class="fas fa-clock text-lux-gold text-3xl mb-3 animate-float" aria-hidden="true"></i>
           <h3 class="luxury-heading text-xl font-bold mb-2">Seamless Planning</h3>
           <p class="text-white/80">From concept to completion, we handle every detail.</p>
         </div>
-        <div
-          class="glass p-8 rounded-xl text-center"
-          data-aos="fade-up"
-          data-aos-delay="500"
-        >
-          <i
-            class="fas fa-leaf text-lux-gold text-3xl mb-3 animate-float"
-            aria-hidden="true"
-          ></i>
+        <div class="glass p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="500">
+          <i class="fas fa-leaf text-lux-gold text-3xl mb-3 animate-float" aria-hidden="true"></i>
           <h3 class="luxury-heading text-xl font-bold mb-2">Sustainable Luxury</h3>
           <p class="text-white/80">
             Responsible travel to preserve destinations for future generations.
           </p>
         </div>
-        <div
-          class="glass p-8 rounded-xl text-center"
-          data-aos="fade-up"
-          data-aos-delay="600"
-        >
-          <i
-            class="fas fa-heart text-lux-gold text-3xl mb-3 animate-float"
-            aria-hidden="true"
-          ></i>
+        <div class="glass p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="600">
+          <i class="fas fa-heart text-lux-gold text-3xl mb-3 animate-float" aria-hidden="true"></i>
           <h3 class="luxury-heading text-xl font-bold mb-2">Passionate Service</h3>
           <p class="text-white/80">
             Our team's passion ensures your journey exceeds expectations.
@@ -579,9 +409,7 @@
 
   <!-- Contact Bar -->
   <section id="contact" class="py-6 bg-lux-gold">
-    <div
-      class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 sm:px-12 text-dark-blue"
-    >
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 sm:px-12 text-dark-blue">
       <div class="flex items-center space-x-6 mb-4 md:mb-0 flex-wrap justify-center md:justify-start gap-4">
         <div class="flex items-center space-x-2">
           <i class="fas fa-phone text-lg"></i>
@@ -594,48 +422,29 @@
       </div>
       <div class="flex items-center space-x-4 justify-center md:justify-end">
         <span class="font-semibold">Follow Us:</span>
-        <a
-          href="#"
-          class="w-8 h-8 bg-dark-blue text-lux-gold rounded-full flex items-center justify-center hover:bg-dhyuti-blue transition"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a
-          href="#"
-          class="w-8 h-8 bg-dark-blue text-lux-gold rounded-full flex items-center justify-center hover:bg-dhyuti-blue transition"
-          ><i class="fab fa-instagram"></i
-        ></a>
-        <a
-          href="#"
-          class="w-8 h-8 bg-dark-blue text-lux-gold rounded-full flex items-center justify-center hover:bg-dhyuti-blue transition"
-          ><i class="fab fa-twitter"></i
-        ></a>
-        <a
-          href="#"
-          class="w-8 h-8 bg-dark-blue text-lux-gold rounded-full flex items-center justify-center hover:bg-dhyuti-blue transition"
-          ><i class="fab fa-linkedin-in"></i
-        ></a>
+        <a href="#"
+          class="w-8 h-8 bg-dark-blue text-lux-gold rounded-full flex items-center justify-center hover:bg-dhyuti-blue transition"><i
+            class="fab fa-facebook-f"></i></a>
+        <a href="#"
+          class="w-8 h-8 bg-dark-blue text-lux-gold rounded-full flex items-center justify-center hover:bg-dhyuti-blue transition"><i
+            class="fab fa-instagram"></i></a>
+        <a href="#"
+          class="w-8 h-8 bg-dark-blue text-lux-gold rounded-full flex items-center justify-center hover:bg-dhyuti-blue transition"><i
+            class="fab fa-twitter"></i></a>
+        <a href="#"
+          class="w-8 h-8 bg-dark-blue text-lux-gold rounded-full flex items-center justify-center hover:bg-dhyuti-blue transition"><i
+            class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
   </section>
 
   <!-- Contact Us Section -->
-  <section
-    id="contact-us"
-    class="py-20 bg-gradient-to-tr from-premium-gray to-dhyuti-blue px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28"
-  >
-    <div
-      class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12"
-    >
+  <section id="contact-us"
+    class="py-20 bg-gradient-to-tr from-premium-gray to-dhyuti-blue px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
       <!-- Illustration / SVG -->
-      <div
-        class="w-full lg:w-1/2 mb-12 lg:mb-0 flex items-center justify-center"
-        data-aos="fade-right"
-      >
-        <img
-          src="./dream-world.svg"
-          alt="Dream World SVG"
-          class="max-w-full max-h-96 animate-float"
-        />
+      <div class="w-full lg:w-1/2 mb-12 lg:mb-0 flex items-center justify-center" data-aos="fade-right">
+        <img src="./dream-world.svg" alt="Dream World SVG" class="max-w-full max-h-96 animate-float" />
       </div>
       <!-- Contact Form and Details -->
       <div class="w-full lg:w-1/2" data-aos="fade-left">
@@ -647,99 +456,67 @@
         </p>
         <form class="bg-white rounded-2xl shadow-lg p-8 mb-6 glass max-w-lg mx-auto md:mx-0">
           <div class="mb-5">
-            <label
-              for="name"
-              class="block text-gray-700 font-semibold mb-2"
-              >Name</label
-            >
-            <input
-              id="name"
-              name="name"
-              type="text"
-              required
-              class="w-full px-4 py-3 rounded-lg border bg-premium-gray focus:ring-2 focus:ring-dhyuti-blue transition"
-            />
+            <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+            <input id="name" name="name" type="text" required
+              class="w-full px-4 py-3 rounded-lg border bg-premium-gray focus:ring-2 focus:ring-dhyuti-blue transition" />
           </div>
           <div class="mb-5">
-            <label
-              for="email"
-              class="block text-gray-700 font-semibold mb-2"
-              >Email</label
-            >
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              class="w-full px-4 py-3 rounded-lg border bg-premium-gray focus:ring-2 focus:ring-dhyuti-blue transition"
-            />
+            <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+            <input id="email" name="email" type="email" required
+              class="w-full px-4 py-3 rounded-lg border bg-premium-gray focus:ring-2 focus:ring-dhyuti-blue transition" />
           </div>
           <div class="mb-5">
-            <label
-              for="message"
-              class="block text-gray-700 font-semibold mb-2"
-              >Message</label
-            >
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              required
-              class="w-full px-4 py-3 rounded-lg border bg-premium-gray focus:ring-2 focus:ring-dhyuti-blue transition"
-            ></textarea>
+            <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+            <textarea id="message" name="message" rows="4" required
+              class="w-full px-4 py-3 rounded-lg border bg-premium-gray focus:ring-2 focus:ring-dhyuti-blue transition"></textarea>
           </div>
-          <button
-            type="submit"
-            class="w-full py-3 bg-dhyuti-blue text-white font-bold rounded-xl hover:bg-dark-blue transition text-lg shadow-lg"
-          >
+          <button type="submit"
+            class="w-full py-3 bg-dhyuti-blue text-white font-bold rounded-xl hover:bg-dark-blue transition text-lg shadow-lg">
             Send Message
           </button>
         </form>
       </div>
     </div>
   </section>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/919451874559?text=Hello%20Dhyutidhara%20Travels%21%20I%20am%20interested%20in%20your%20travel%20packages."
+    target="_blank" rel="noopener noreferrer"
+    class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#128C7E] transition flex items-center justify-center z-50"
+    aria-label="Chat with us on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+      <path
+        d="M20.52 3.48A11.71 11.71 0 0012.01.06C6.03.06 1.34 4.84 1.34 10.82c0 1.9.5 3.67 1.46 5.26L.04 23l7.08-2.24a10.69 10.69 0 005.86 1.77h.01c5.99 0 10.71-4.8 10.71-10.76a10.7 10.7 0 00-4.54-8.3zM12.01 21.14c-1.71 0-3.37-.45-4.8-1.27l-.34-.2-4.2 1.32 1.3-4.06-.22-.36a8.83 8.83 0 01-1.38-4.93c0-4.89 4-8.87 8.88-8.87 2.38 0 4.62.93 6.27 2.62a8.77 8.77 0 012.64 6.25c0 4.88-4 8.87-8.87 8.87zm5.2-7.4c-.28-.14-1.65-.81-1.9-.9-.25-.1-.43-.14-.62.14-.18.28-.7.9-.86 1.09-.16.18-.32.21-.6.07-.28-.15-1.18-.43-2.25-1.38-.83-.73-1.39-1.63-1.56-1.91-.16-.27-.02-.42.12-.56.12-.11.28-.3.42-.46.14-.15.19-.26.3-.44.1-.18.05-.33-.02-.46-.07-.14-.62-1.52-.85-2.09-.22-.55-.44-.48-.62-.48h-.53c-.18 0-.47.07-.72.33-.25.27-.96.94-.96 2.28 0 1.33.98 2.62 1.12 2.8.14.18 1.93 2.96 4.68 4.15.65.28 1.16.45 1.56.58.65.21 1.24.18 1.71.11.52-.08 1.65-.67 1.88-1.32.24-.65.24-1.2.17-1.32-.07-.13-.25-.18-.53-.32z" />
+    </svg>
+  </a>
+  <!-- End of WhatsApp Button -->
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-white py-16 px-6 sm:px-12 md:px-20">
-    <div
-      class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left"
-    >
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
       <div>
         <div class="flex items-center justify-center md:justify-start space-x-3 mb-6">
-          <div
-            class="w-10 h-10 bg-dhyuti-blue rounded-full flex items-center justify-center"
-          >
+          <div class="w-10 h-10 bg-dhyuti-blue rounded-full flex items-center justify-center">
             <img src="./logo.png" alt="Dhyutidhara Logo" class="w-6 h-6" />
           </div>
-          <span class="luxury-heading text-xl font-bold text-dhyuti-blue"
-            >Dhyutidhara</span
-          >
+          <span class="luxury-heading text-xl font-bold text-dhyuti-blue">Dhyutidhara</span>
         </div>
         <p class="text-gray-300 mb-4 leading-relaxed max-w-sm mx-auto md:mx-0">
           Creating extraordinary travel experiences that inspire, transform,
           and create lifelong memories.
         </p>
         <div class="flex justify-center md:justify-start space-x-3">
-          <a
-            href="#"
-            class="w-8 h-8 bg-dhyuti-blue text-white rounded-full flex items-center justify-center hover:bg-dark-blue transition"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a
-            href="#"
-            class="w-8 h-8 bg-dhyuti-blue text-white rounded-full flex items-center justify-center hover:bg-dark-blue transition"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a
-            href="#"
-            class="w-8 h-8 bg-dhyuti-blue text-white rounded-full flex items-center justify-center hover:bg-dark-blue transition"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a
-            href="#"
-            class="w-8 h-8 bg-dhyuti-blue text-white rounded-full flex items-center justify-center hover:bg-dark-blue transition"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
+          <a href="#"
+            class="w-8 h-8 bg-dhyuti-blue text-white rounded-full flex items-center justify-center hover:bg-dark-blue transition"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="#"
+            class="w-8 h-8 bg-dhyuti-blue text-white rounded-full flex items-center justify-center hover:bg-dark-blue transition"><i
+              class="fab fa-instagram"></i></a>
+          <a href="#"
+            class="w-8 h-8 bg-dhyuti-blue text-white rounded-full flex items-center justify-center hover:bg-dark-blue transition"><i
+              class="fab fa-twitter"></i></a>
+          <a href="#"
+            class="w-8 h-8 bg-dhyuti-blue text-white rounded-full flex items-center justify-center hover:bg-dark-blue transition"><i
+              class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
       <div>
@@ -773,18 +550,10 @@
           KHURDAI BAZAR POST BAKKAS, LUCKNOW- 226002, Uttar Pradesh
         </p>
         <p class="max-w-xs mx-auto md:mx-0 mt-4 leading-relaxed">
-          <a href="tel:+919876543210" class="hover:underline"
-            >+91 98765 43210</a
-          ><br />
-          <a href="mailto:info@dhyutidhara.in" class="hover:underline"
-            >info@dhyutidhara.in</a
-          ><br />
-          <a
-            href="https://dhyutidhara.in/"
-            class="text-blue-500 hover:text-blue-700 transition-all duration-100"
-          >
-            https://dhyutidhara.in/</a
-          >
+          <a href="tel:+919876543210" class="hover:underline">+91 98765 43210</a><br />
+          <a href="mailto:info@dhyutidhara.in" class="hover:underline">info@dhyutidhara.in</a><br />
+          <a href="https://dhyutidhara.in/" class="text-blue-500 hover:text-blue-700 transition-all duration-100">
+            https://dhyutidhara.in/</a>
         </p>
       </div>
     </div>
@@ -822,4 +591,5 @@
     });
   </script>
 </body>
+
 </html>
