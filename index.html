@@ -35,96 +35,111 @@
   </script>
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+    html, body { width: 100%; overflow-x: hidden; } /* prevent horizontal overflow on small screens */
 
-    body {
-      font-family: "Inter", sans-serif;
-      scroll-behavior: smooth;
-    }
+    body { font-family: "Inter", sans-serif; scroll-behavior: smooth; }
 
-    .luxury-heading {
-      font-family: "Playfair Display", serif;
-    }
+    .luxury-heading { font-family: "Playfair Display", serif; }
 
-    .glass {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
+    .glass { background: rgba(255,255,255,0.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 
     .nav-glass {
-      background: rgba(17, 24, 39, 0.48);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      box-shadow: 0 10px 30px rgba(2, 6, 23, 0.45);
+      background: rgba(17,24,39,0.48);
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.45);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       transition: background 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
       color: #ffffff;
+      left: 0;
+      right: 0;
     }
 
-    .nav-glass a {
-      color: rgba(255, 255, 255, 0.95);
+    /* mobile-first container for nav content */
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
     }
 
-    .nav-glass a:hover {
-      color: #fffacd;
+    .nav-left { display:flex; align-items:center; gap:0.75rem; min-width: 0; }
+    .nav-left .text-limited { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    /* mobile menu (full width, positioned under nav) */
+    #mobile-menu {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(100%);
+      background: rgba(17,24,39,0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      z-index: 40;
+      padding: 0.5rem 1rem 1rem;
+    }
+    #mobile-menu a { display:block; padding: 0.75rem 0.5rem; color: #fff; border-radius: .5rem; word-break: break-word; }
+    #mobile-menu a:hover { background: rgba(255,255,255,0.03); }
+
+    /* Desktop menu shows from md up (keeps original Tailwind behavior but safe css fallback) */
+    .desktop-menu { display: none; }
+    @media (min-width: 768px) {
+      .desktop-menu { display: flex; gap: 1.5rem; align-items:center; }
+      #mobile-menu { display: none !important; position: static; padding: 0; background: transparent; border-top: none; }
     }
 
-    .nav-glass .text-dhyuti-blue {
-      color: #2c8bc9 !important;
+    .nav-glass a { color: rgba(255,255,255,0.95); }
+    .nav-glass a:hover { color: #fffacd; }
+    .nav-glass .text-dhyuti-blue { color: #2c8bc9 !important; }
+
+    /* avoid absolute decorative icons causing horizontal overflow on small screens */
+    .hero-bg .fas { transform: none; opacity: .18; }
+    @media (max-width: 767px) {
+      .hero-bg .fas { display: none; } /* hide large decorative icons on small screens to prevent overflow */
+      .animate-float { animation: none; } /* disable heavy animations on very small devices */
     }
 
-    .animate-float {
-      animation: float 6s ease-in-out infinite;
-    }
+    /* ensure images and cards are fully responsive */
+    img { max-width: 100%; height: auto; display: block; }
 
+    .animate-float { animation: float 6s ease-in-out infinite; }
     @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-18px);
-      }
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
     }
   </style>
 </head>
 
 <body class="bg-premium-gray text-gray-800">
   <!-- Navigation -->
-  <nav class="fixed w-full z-50 nav-glass text-white">
-    <div class="max-w-7xl mx-auto flex justify-between items-center py-3 px-4">
-      <div class="flex items-center space-x-3" id="logo">
-        <div class="w-12 h-12 bg-dhyuti-blue rounded-full flex items-center justify-center">
+  <nav class="fixed w-full z-50 nav-glass text-white" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="nav-left" id="logo">
+        <div class="w-12 h-12 bg-dhyuti-blue rounded-full flex items-center justify-center flex-shrink-0">
           <img src="./logo.png" alt="Dhyutidhara Logo" class="w-8 h-8" />
         </div>
-        <div>
+        <div class="text-limited">
           <span class="text-xl font-luxury text-dhyuti-blue font-bold">Dhyutidhara</span>
           <span class="block text-xs text-white/80 font-medium">TRAVELS</span>
         </div>
       </div>
 
-      <!-- Desktop Menu -->
-      <div class="hidden md:flex items-center space-x-6">
+      <!-- Desktop Menu (hidden under 768px by CSS above) -->
+      <div class="desktop-menu">
         <a href="#home" class="hover:text-white/90 transition font-semibold">Home</a>
         <a href="#packages" class="hover:text-white/90 transition font-semibold">Packages</a>
         <a href="#about" class="hover:text-white/90 transition font-semibold">About</a>
         <a href="#why-choose" class="hover:text-white/90 transition font-semibold">Why Us</a>
-        <a href="#contact"
-          class="bg-dhyuti-blue px-5 py-2 rounded-full text-white font-semibold hover:bg-dark-blue transition">Contact</a>
+        <a href="#contact" class="bg-dhyuti-blue px-5 py-2 rounded-full text-white font-semibold hover:bg-dark-blue transition">Contact</a>
       </div>
 
       <!-- Mobile menu button -->
-      <button id="mobile-menu-button"
-        class="md:hidden flex items-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white"
-        aria-label="Toggle menu">
+      <button id="mobile-menu-button" class="md:hidden flex items-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white" aria-label="Toggle menu" aria-expanded="false">
         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -132,20 +147,21 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-nav-bg backdrop-blur-md border-t border-gray-700">
-      <a href="#home" class="block px-4 py-3 text-white hover:bg-dhyuti-blue transition">Home</a>
-      <a href="#packages" class="block px-4 py-3 text-white hover:bg-dhyuti-blue transition">Packages</a>
-      <a href="#about" class="block px-4 py-3 text-white hover:bg-dhyuti-blue transition">About</a>
-      <a href="#why-choose" class="block px-4 py-3 text-white hover:bg-dhyuti-blue transition">Why Us</a>
-      <a href="#contact" class="block px-4 py-3 text-white hover:bg-dark-blue transition bg-dhyuti-blue">Contact</a>
+    <div id="mobile-menu" class="hidden">
+      <a href="#home">Home</a>
+      <a href="#packages">Packages</a>
+      <a href="#about">About</a>
+      <a href="#why-choose">Why Us</a>
+      <a href="#contact" class="bg-dhyuti-blue text-white rounded-md mt-1">Contact</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section id="home"
     class="hero-bg min-h-screen flex items-center relative pt-28 pb-12 bg-gradient-to-br from-dhyuti-blue to-dark-blue px-6 sm:px-8 md:px-12 lg:px-16">
-    <div class="max-w-7xl w-full mx-auto py-16 grid grid-cols-1 lg:grid-cols-2 gap-16 z-20 relative items-center">
+    <div class="max-w-7xl w-full mx-auto py-16 grid grid-cols-1  lg:grid-cols-2 gap-16 z-20 relative items-center">
       <div data-aos="fade-right" class="text-center lg:text-left">
+        
         <h1 class="luxury-heading text-white text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
           Discover
           <span class="text-lux-gold block">Extraordinary</span> Journeys
@@ -583,11 +599,12 @@
       delay: 400,
     });
 
+    // preserve existing mobile toggle behaviour and update aria-expanded
     const btn = document.getElementById("mobile-menu-button");
     const menu = document.getElementById("mobile-menu");
-
     btn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
+      const isHidden = menu.classList.toggle("hidden");
+      btn.setAttribute("aria-expanded", (!isHidden).toString());
     });
   </script>
 </body>
