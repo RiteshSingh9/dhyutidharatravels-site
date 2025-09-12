@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhyutidhara Gallery - Luxury Journeys</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dhyuti-blue': '#2c8bc9',
+            'lux-gold': '#d4af37',
+            'premium-gray': '#f8f9fa',
+          },
+          fontFamily: {
+            'luxury': ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+    .luxury-heading { font-family: 'Playfair Display', serif; }
+    .glass {
+      background: rgba(255,255,255,0.12); backdrop-filter: blur(10px);
+    }
+    .gallery-img:hover { transform: scale(1.04); transition: 0.3s; box-shadow: 0 8px 32px #2c8bc988; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-white shadow-sm py-6">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-dhyuti-blue rounded-full flex items-center justify-center">
+          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <span class="luxury-heading text-xl font-bold text-dhyuti-blue">Dhyutidhara Gallery</span>
+      </div>
+      <nav>
+        <a href="index.html" class="text-dhyuti-blue font-semibold hover:underline">Home</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Gallery Section -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-14" data-aos="fade-down">
+        <h2 class="luxury-heading text-5xl font-bold text-dhyuti-blue mb-4">Our Luxury Journeys</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+          Explore travel moments & experiences curated by Dhyutidhara. Every photo tells a story of luxury, adventure, and discovery.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4">
+        <!-- Gallery images - Replace source links with yours -->
+        <div class="rounded-2xl overflow-hidden glass shadow-lg" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=400&q=80" alt="Himalayas Luxury" class="gallery-img w-full h-72 object-cover" />
+        </div>
+        <div class="rounded-2xl overflow-hidden glass shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80" alt="Rajasthan Royalty" class="gallery-img w-full h-72 object-cover" />
+        </div>
+        <div class="rounded-2xl overflow-hidden glass shadow-lg" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Kerala Backwaters" class="gallery-img w-full h-72 object-cover" />
+        </div>
+        <div class="rounded-2xl overflow-hidden glass shadow-lg" data-aos="fade-up" data-aos-delay="400">
+          <img src="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=400&q=80" alt="Luxury Europe" class="gallery-img w-full h-72 object-cover" />
+        </div>
+        <div class="rounded-2xl overflow-hidden glass shadow-lg" data-aos="fade-up" data-aos-delay="500">
+          <img src="https://images.unsplash.com/photo-1432888498266-38ffec3e4900?auto=format&fit=crop&w=400&q=80" alt="Safari Adventure" class="gallery-img w-full h-72 object-cover" />
+        </div>
+        <div class="rounded-2xl overflow-hidden glass shadow-lg" data-aos="fade-up" data-aos-delay="600">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Island Experience" class="gallery-img w-full h-72 object-cover" />
+        </div>
+        <div class="rounded-2xl overflow-hidden glass shadow-lg" data-aos="fade-up" data-aos-delay="700">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Cultural Moments" class="gallery-img w-full h-72 object-cover" />
+        </div>
+        <div class="rounded-2xl overflow-hidden glass shadow-lg" data-aos="fade-up" data-aos-delay="800">
+          <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=400&q=80" alt="Luxury Cruise" class="gallery-img w-full h-72 object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-10 mt-20">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <div class="luxury-heading text-2xl font-bold text-dhyuti-blue mb-1">Dhyutidhara</div>
+        <p class="text-gray-300">Premier journeys. Unmatched luxury.</p>
+      </div>
+      <div>
+        <h4 class="luxury-heading text-lg font-bold text-dhyuti-blue mb-2">Quick Links</h4>
+        <a href="index.html" class="text-gray-300 hover:text-dhyuti-blue block mb-1">Home</a>
+        <a href="gallery.html" class="text-gray-300 hover:text-dhyuti-blue block mb-1">Gallery</a>
+      </div>
+      <div>
+        <h4 class="luxury-heading text-lg font-bold text-dhyuti-blue mb-2">Contact Info</h4>
+        <div class="text-gray-300">+91 98765 43210</div>
+        <div class="text-gray-300">info@dhyutidhara.in</div>
+        <div class="text-gray-300">Mumbai, India</div>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 mt-8 pt-4 text-center text-gray-400">
+      © 2025 Dhyutidhara Travels. All rights reserved.
+    </div>
+  </footer>
+  <!-- JS -->
+  <script>
+    AOS.init({ duration: 1200, once: true, offset: 80 });
+  </script>
+</body>
+</html>
